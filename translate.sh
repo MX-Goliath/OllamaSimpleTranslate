@@ -3,17 +3,17 @@
 model=llama3
 Language=Russian
 
-# Получаем текст из буфера обмена
+# Get text from clipboard
 TEXT=$(xclip -o)
 
-# Формируем команду для перевода с помощью Ollama
+# Form the command for translation using Ollama
 COMMAND="translate that into $Language language. just write the translation, nothing extra.: $TEXT"
 
-# Выполняем перевод
+# Perform translation
 TRANSLATION=$(ollama run $model "$COMMAND")
 
-# Выводим результат
+# Display the result
 echo -e "$TRANSLATION"
 
-# Чтобы удержать окно терминала открытым
+# Keep the terminal window open
 read -p "Press any key to quit..."

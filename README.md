@@ -52,5 +52,5 @@ The terminal window will open, showing the translation of the clipboard text.
 ## Acknowledgements
 
 Thanks to Ollama for providing the model.
-This project was inspired by the desktop application DeepL and the ability to quickly translate via Ctrl+C+C+C.
+This project was inspired by the desktop application DeepL and the ability to quickly translate via Ctrl+C+C.
 

@@ -1,12 +1,13 @@
 #!/bin/bash
 
-model=phi3:latest
+model=llama3
+Language=Russian
 
 # Получаем текст из буфера обмена
 TEXT=$(xclip -o)
 
 # Формируем команду для перевода с помощью Ollama
-COMMAND="переведи это на русский язык: $TEXT"
+COMMAND="translate that into $Language language. just write the translation, nothing extra.: $TEXT"
 
 # Выполняем перевод
 TRANSLATION=$(ollama run $model "$COMMAND")
@@ -15,4 +16,4 @@ TRANSLATION=$(ollama run $model "$COMMAND")
 echo -e "$TRANSLATION"
 
 # Чтобы удержать окно терминала открытым
-read -p "Нажмите любую клавишу для закрытия..."
+read -p "Press any key to quit..."

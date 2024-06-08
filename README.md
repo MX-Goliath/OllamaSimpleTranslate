@@ -48,49 +48,9 @@ This script translates text from the clipboard using Ollama and displays the tra
 
 The terminal window will open, showing the translation of the clipboard text.
 
-## Script Details
-
-Here is the full content of `translate.sh`:
-
-```bash
-#!/bin/bash
-
-model=phi3:latest
-
-# Получаем текст из буфера обмена
-TEXT=$(xclip -o)
-
-# Формируем команду для перевода с помощью Ollama
-COMMAND="переведи это на русский язык: $TEXT"
-
-# Выполняем перевод
-TRANSLATION=$(ollama run $model "$COMMAND")
-
-# Выводим результат
-echo -e "$TRANSLATION"
-
-# Чтобы удержать окно терминала открытым
-read -p "Нажмите любую клавишу для закрытия..."
-```
-
-This script:
-
-- Retrieves text from the clipboard.
-- Constructs a translation command for Ollama.
-- Executes the command and retrieves the translation.
-- Displays the translation in the terminal.
-- Keeps the terminal window open until a key is pressed.
-
-## Contributing
-
-Feel free to submit issues or pull requests if you have any improvements or suggestions.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Acknowledgements
 
-- Thanks to Ollama for providing the translation model.
-- This project was inspired by the need to quickly translate text from the clipboard using a convenient keyboard shortcut.
+Thanks to Ollama for providing the model.
+This project was inspired by the desktop application DeepL and the ability to quickly translate via Ctrl+C+C+C.
 
